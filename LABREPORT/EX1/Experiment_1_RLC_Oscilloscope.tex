@@ -102,7 +102,7 @@
 	At this condition, the applied frequency matches the resonant frequency $f_0$ of the RLC circuit.
 	
 	\vspace{0.5cm}
-	\hspace{-0.73cm}	
+	\noindent
 	The damping factor $\beta$ (in $\text{rad/s}$) for a series RLC circuit is:
 	\begin{equation}
 		\beta = \frac{R}{2L}
@@ -698,14 +698,14 @@
 		
 		\vspace{0.2cm}
 		\noindent
-		From Eq. (2), the theoretical resonant frequency calculated from $\overline{L_X}$ and $\overline{C_X}$ is
+		From Eq. (2), the theoretical mean resonant frequency calculated from $\overline{L_X}$ and $\overline{C_X}$ is
 		\begin{center}
 			\fbox{%
 				\begin{minipage}{0.8\textwidth}
 					\vspace{-0.4cm}
 					\centering
 					\begin{displaymath}
-						f_0 = \frac{1}{2\pi \sqrt{\overline{L}_X \overline{C}_X}} 
+						\overline{f_0} = \frac{1}{2\pi \sqrt{\overline{L}_X \overline{C}_X}} 
 						= \dfrac{1}{2\pi \sqrt{\left(9.209 \times 10^{-4}\right) \times \left(6.291 \times 10^{-7}\right)}} \approx 6612.323 
 						\left(\text{Hz}\right)
 					\end{displaymath}
@@ -714,7 +714,46 @@
 		\end{center}
 		
 		\noindent
-		By the propagation of uncertainty 
+		By the propagation of uncertainty, the relative uncertainty in $\overline{f_0}$ is
+		\begin{center}
+			\fbox{%
+				\begin{minipage}{0.8\textwidth}
+					\vspace{-0.4cm}
+					\centering
+					\begin{displaymath}
+						\dfrac{\Delta f_0}{\overline{f_0}} = \sqrt{\left(\dfrac{-1}{2} \times \dfrac{\Delta L_X}{\overline{L_X}}\right)^2 + \left(\dfrac{-1}{2} \times \dfrac{\Delta C_X}{\overline{C_X}}\right)^2} = \dfrac{1}{2} \times \sqrt{\left(\dfrac{\Delta L_X}{\overline{L_X}}\right)^2 + \left(\dfrac{\Delta C_X}{\overline{C_X}}\right)^2}
+					\end{displaymath}
+				\end{minipage}%
+			}
+		\end{center}
+		
+		\noindent
+		And the uncertainty in $f_0$ is
+		\begin{center}
+			\fbox{%
+				\begin{minipage}{0.8\textwidth}
+					\vspace{-0.4cm}
+					\centering
+					\begin{displaymath}
+						\Delta f_0 = \dfrac{\overline{f_0}}{2} \times \sqrt{\left(\dfrac{\Delta L_X}{\overline{L_X}}\right)^2 + \left(\dfrac{\Delta C_X}{\overline{C_X}}\right)^2} \approx 120.995 \left(\text{Hz}\right)
+					\end{displaymath}
+				\end{minipage}%
+			}
+		\end{center}
+		
+		\noindent
+		Therefore, the theoretical resonant frequency $f_0$ is
+		\begin{center}
+			\fbox{%
+				\begin{minipage}{0.8\textwidth}
+					\vspace{-0.4cm}
+					\centering
+					\begin{displaymath}
+						f_0 = \overline{f_0} \pm \Delta f_0 = 6612.323 \pm 120.995 \left(\text{Hz}\right)
+					\end{displaymath}
+				\end{minipage}%
+			}
+		\end{center}
 		
 		\noindent
 		The measured average resonant frequencies $\overline{f}_p$ and $\overline{f}_s$ are in close agreement with the theoretical value $f_0 = \frac{1}{2\pi\sqrt{\overline{L}_X \overline{C}_X}}$. Any slight discrepancies arise from the non-zero internal ohmic resistance of the inductor coil (which shifts the damped parallel resonant frequency slightly below $f_0$), parasitic capacitance and inductance in the connecting wires, and visual judgment uncertainty when determining the exact collapse of the Lissajous ellipse into a straight line on the oscilloscope screen.
