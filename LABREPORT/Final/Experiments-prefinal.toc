@@ -1,0 +1,26 @@
+\contentsline {section}{\numberline {Experiment 1:}Measurement of Resistance, Capacitance, Inductance and Resonant Frequencies of RLC Circuit Using Oscilloscope}{7}{section*.3}%
+\contentsline {subsection}{1. DEVICES AND PURPOSE OF THE EXPERIMENT}{7}{section*.4}%
+\contentsline {subsection}{2. THEORETICAL BACKGROUND}{7}{section*.6}%
+\contentsline {subsection}{3. EXPERIMENTAL PROCEDURE}{10}{section*.13}%
+\contentsline {subsection}{4. EXPERIMENTAL RESULTS}{13}{section*.24}%
+\contentsline {section}{\numberline {Experiment 2:}Measurement of Magnetic Field inside a Solenoid with Finite Length}{19}{section*.36}%
+\contentsline {subsection}{1. DEVICES AND PURPOSE OF THE EXPERIMENT}{19}{section*.37}%
+\contentsline {subsection}{2. THEORETICAL BACKGROUND}{19}{section*.39}%
+\contentsline {subsection}{3. EXPERIMENTAL PROCEDURE}{20}{section*.41}%
+\contentsline {subsection}{4. EXPERIMENTAL RESULTS}{21}{section*.48}%
+\contentsline {section}{\numberline {Experiment 3:}Inductor and Free Oscillations in RLC Circuit}{25}{section*.58}%
+\contentsline {subsection}{1. DEVICES AND PURPOSE OF THE EXPERIMENT}{25}{section*.59}%
+\contentsline {subsection}{2.THEORETICAL BACKGROUND}{25}{section*.61}%
+\contentsline {subsection}{3. EXPERIMENTAL PROCEDURE}{27}{section*.66}%
+\contentsline {subsection}{4. EXPERIMENTAL RESULTS}{28}{section*.74}%
+\contentsline {section}{\numberline {Experiment 4:}Verification of Faraday's Law of Electromagnetic Induction}{31}{section*.80}%
+\contentsline {subsection}{1. DEVICES AND PURPOSE OF THE EXPERIMENT}{31}{section*.81}%
+\contentsline {subsection}{2. THEORETICAL BACKGROUND}{31}{section*.83}%
+\contentsline {subsection}{3. EXPERIMENTAL PROCEDURE}{31}{section*.85}%
+\contentsline {subsection}{4. EXPERIMENTAL RESULTS}{32}{section*.91}%
+\contentsline {subsection}{5. COMMENTS AND EXPLANATIONS}{37}{section*.101}%
+\contentsline {section}{\numberline {Experiment 5:}Investigation of Transmission of Electromagnetic Wave (Microwave)}{39}{section*.103}%
+\contentsline {subsection}{1. DEVICES AND PURPOSE OF THE EXPERIMENT}{39}{section*.104}%
+\contentsline {subsection}{2. THEORETICAL BACKGROUND}{39}{section*.106}%
+\contentsline {subsection}{3. EXPERIMENTAL PROCEDURE}{40}{section*.108}%
+\contentsline {subsection}{4. EXPERIMENTAL RESULTS}{45}{section*.119}%
