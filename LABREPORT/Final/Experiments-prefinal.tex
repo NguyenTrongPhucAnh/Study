@@ -65,24 +65,52 @@ headheight=15pt]{geometry}
 \makeatother
 
 % ---- Table of contents ---------------------------------------------
-% Switch to \tocsectionsfalse to list only the experiments (no sections).
+% Switch to \tocsectionsfalse to list only the experiments (no sections/subsections).
 \newif\iftocsections
 \tocsectionstrue
 
+% Hiển thị tới cấp paragraph trong TOC:
+%   \l@section       -> Experiment X: ... (Level 1)
+%   \l@subsection    -> \section*         (Level 2: 1., 2., 3., ...)
+%   \l@subsubsection -> \subsection*      (Level 3: 2.1., 2.2., ...)
+%   \l@paragraph     -> \subsubsection*   (Level 4: 2.2.1., 3.1.1., ...)
+\setcounter{tocdepth}{4}
+
 \makeatletter
-% every starred \section*{...} inside an experiment is also listed in the TOC
+% 1. \section*{...} -> cấp subsection trong TOC
 \let\orig@section\section
 \renewcommand\section{\@ifstar\star@section\orig@section}
 \newcommand\star@section[1]{%
-  \iftocsections
-    \phantomsection\addcontentsline{toc}{subsection}{#1}%
-  \fi
-  \orig@section*{#1}}
-% TOC line styles: experiments in bold, sections indented under them
+	\iftocsections
+	\phantomsection\addcontentsline{toc}{subsection}{#1}%
+	\fi
+	\orig@section*{#1}}
+
+% 2. \subsection*{...} -> cấp subsubsection trong TOC
+\let\orig@subsection\subsection
+\renewcommand\subsection{\@ifstar\star@subsection\orig@subsection}
+\newcommand\star@subsection[1]{%
+	\iftocsections
+	\phantomsection\addcontentsline{toc}{subsubsection}{#1}%
+	\fi
+	\orig@subsection*{#1}}
+
+% 3. \subsubsection*{...} -> cấp paragraph trong TOC
+\let\orig@subsubsection\subsubsection
+\renewcommand\subsubsection{\@ifstar\star@subsubsection\orig@subsubsection}
+\newcommand\star@subsubsection[1]{%
+	\iftocsections
+	\phantomsection\addcontentsline{toc}{paragraph}{#1}%
+	\fi
+	\orig@subsubsection*{#1}}
+
+% TOC line styles: thụt lề tăng dần theo từng cấp
 \renewcommand*\l@section[2]{%
-  \addpenalty{-\@highpenalty}\addvspace{0.9em \@plus\p@}%
-  \@dottedtocline{1}{0em}{6.6em}{\bfseries #1}{\bfseries #2}}
-\renewcommand*\l@subsection{\@dottedtocline{2}{6.6em}{0em}}
+	\addpenalty{-\@highpenalty}\addvspace{0.9em \@plus\p@}%
+	\@dottedtocline{1}{0em}{6.6em}{\bfseries #1}{\bfseries #2}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{1.8em}{0em}}
+\renewcommand*\l@subsubsection{\@dottedtocline{3}{3.6em}{0em}}
+\renewcommand*\l@paragraph{\@dottedtocline{4}{5.4em}{0em}}
 \makeatother
 
 % ---- Experiments ----------------------------------------------------
@@ -116,19 +144,45 @@ headheight=15pt]{geometry}
 \mbox{}
 
 %% =====================================================================
+%% =====================================================================
 %% ABSTRACT (odd page)
 %% =====================================================================
 \cleardoublepage
 \markboth{}{ABSTRACT}
 \phantomsection\pdfbookmark[1]{ABSTRACT}{abstract}
 \begin{center}
+	\text{}
+	
 	\textbf{\Large ABSTRACT}
 \end{center}
 \vspace{0.5cm}
 
 \noindent
-This document presents five laboratory experiments in electricity, magnetism and electromagnetic waves. Experiment 1 introduces the oscilloscope and the function generator, which are used to measure an unknown resistance, capacitance and inductance from the figures traced by two perpendicular oscillations, and to determine the parallel and series resonant frequencies of an RLC circuit. Experiment 2 investigates the magnetic field along the axis of a solenoid of finite length and its dependence on the current, and compares the measurements with the prediction of the Biot--Savart--Laplace law. Experiment 3 studies the decay of the current in an RL circuit to determine the resistance and inductance of a coil with and without an iron core, and then examines the free damped oscillations and the energy exchange in an RLC circuit. Experiment 4 verifies Faraday's law of electromagnetic induction by recording the voltage induced in a 1200-turn and a 150-turn coil by a bar magnet falling through them, using single and double magnet configurations. Experiment 5 explores the transmission of microwaves, including straight-line propagation, penetration, screening and absorption, reflection, refraction, diffraction, interference and polarization, and determines their wavelength and frequency from standing-wave measurements. In every experiment the measured data are tabulated, processed and discussed in relation to the underlying theory.
+This report summarizes five laboratory experiments conducted for the Physics II coursework, covering circuit analysis, electromagnetism, and electromagnetic wave propagation. 
 
+\vspace{0.35cm}
+\noindent
+Using an oscilloscope and a function generator, the first experiment determines unknown resistance, capacitance, and inductance from phase-dependent Lissajous figures alongside the parallel and series resonant frequencies of an RLC circuit. 
+
+\vspace{0.35cm}
+\noindent
+The second experiment maps the axial magnetic field of a finite solenoid as a function of position and current, benchmarking the results against the Biot--Savart--Laplace model. 
+
+\vspace{0.35cm}
+\noindent
+Building on transient and oscillatory circuit behavior, the third experiment extracts coil resistance and inductance (with and without a core) from exponential current decay in an RL circuit and examines free damped oscillations and energy dissipation in an RLC circuit. 
+
+\vspace{0.35cm}
+\noindent
+The fourth experiment investigates electromagnetic induction by recording voltage pulses generated as single and double bar magnets fall through 1200-turn and 150-turn coils.
+
+\vspace{0.35cm}
+\noindent
+The final experiment examines microwave transmission through qualitative and quantitative tests—spanning rectilinear propagation, penetration, screening and absorption, reflection, refraction, diffraction, interference, and polarization—before determining microwave wavelength and frequency from standing-wave node/antinode spacing. 
+
+\vspace{0.35cm}
+\noindent
+Across all five experiments, experimental readings are systematically tabulated, analyzed with error propagation, and interpreted in light of theoretical predictions.
 %% =====================================================================
 %% TABLE OF CONTENTS (odd page)
 %% =====================================================================
@@ -138,6 +192,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 \begin{center}
 	\textbf{\Large TABLE OF CONTENTS}
 \end{center}
+\par
 \vspace{0.3cm}
 \makeatletter\@starttoc{toc}\makeatother
 
@@ -161,7 +216,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 		\textbf{{\Large OF RLC CIRCUIT USING OSCILLOSCOPE}}
 	\end{center}
 	\vspace{-0.5cm}
-	\section*{1. DEVICES AND PURPOSE OF THE EXPERIMENT}
+	\section*{1. Devices and Purpose of the experiment}
 	\begin{center}
 		\includegraphics[width=0.8\textwidth]{Devices1}
 		\captionof{figure}{\textit{ Measurement circuit layout (a), connection box with the notations (b)}}
@@ -171,7 +226,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 	The experiment helps the student understanding the typical RLC circuits and the manner to use the equipments including oscilloscope and function generator in electronic engineering, namely measuring the physical basic parameters like resistance, capacitance, and inductance as well as the resonant frequencies.
 	
 	\vspace{-0.5cm}
-	\section*{2. THEORETICAL BACKGROUND}
+	\section*{2. Theoretical background}
 	\subsection*{2.1. RLC Circuit}
 	An RLC circuit (also known as a resonant circuit or a tuned circuit) is an electrical circuit consisting of a resistor ($R$), an inductor ($L$), and a capacitor ($C$), connected in series or in parallel. Every RLC circuit consists of two main components: a power source and a resonator (series LC or parallel LC).
 	\begin{center}
@@ -283,7 +338,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 		Z_L = 2\pi f L_X = R_0 \implies L_X = \frac{R_0}{2\pi f}
 	\end{equation}
 	
-	\section*{3. EXPERIMENTAL PROCEDURE}
+	\section*{3. Experimental procedure}
 	
 	\subsection*{3.1. Measurement of Resistance, Capacitance, and Inductance}
 	\begin{center}
@@ -314,7 +369,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 	\end{enumerate}
 	
 	\subsection*{3.2. Measurement of Resonant Frequency of RLC Circuit}
-	\subsubsection*{2.2.1. Parallel RLC circuit}
+	\subsubsection*{3.2.1. Parallel RLC circuit}
 	\begin{enumerate}[leftmargin=1.5em]
 		\item Connect $R_0$ ($1000\,\Omega$) between points $1$ and $2$. Insert U-shape connectors across $(2,3)$, $(2',3')$, and $(1',2')$. Connect both $C_X$ and $L_X$ in parallel across points $3$ and $3'$. Connect OS X-channel to $(1,1')$ and Y-channel to $(2,2')$.
 		\item Adjust the FG frequency knobs until the oblique oval on the OS screen collapses into an inclined straight line. Record the parallel resonant frequency $f_p$ in Table 4.
@@ -463,7 +518,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 		\caption{\textit{Series RLC circuit layout for measurement of resonant frequency}}
 	\end{figure}
 	
-	\section*{4. EXPERIMENTAL RESULTS}
+	\section*{4. Experimental results}
 	\subsection*{4.1. Measurement of resistance, capacitance, and inductance}
 	\subsubsection*{4.1.1. Data Tables}
 	
@@ -899,7 +954,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 		\textbf{{\Large SOLENOID WITH FINITE LENGTH}}
 	\end{center}
 	
-	\section*{1. DEVICES AND PURPOSE OF THE EXPERIMENT}
+	\section*{1.  Devices and Purpose of the experiment}
 	\begin{center}
 		\includegraphics[width=0.75\textwidth]{Devices2}
 	\end{center}
@@ -908,7 +963,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 	results with the theoretical ones based on Biot-Savart’s law.
 	
 	
-	\section*{2. THEORETICAL BACKGROUND}
+	\section*{2. Theoretical background}
 	
 	\noindent
 	According to the Biot--Savart--Laplace law, the magnetic field $\vec{B}$ produced on the axis of a current-carrying loop is determined as follows:
@@ -958,7 +1013,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 	\noindent
 	It can be seen that magnetic field produced by a finite coil is smaller than that by an infinite one. Clearly, the magnetic field inside is homogeneous and its strength does not depend on the distance from the axis. This last result, which holds strictly true only near the centre of the solenoid where the field lines are parallel to its length, is the most important.
 	
-	\section*{3. EXPERIMENTAL PROCEDURE}
+	\section*{3. Experimental procedure}
 	
 	\subsection*{3.1. Preparation of Measurement}
 	Using wires to connect the solenoid, rheostat and ammeter together in series circuit as 
@@ -992,7 +1047,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 		\item Measure the magnetic field at positions $x = 0\,\text{cm}$, $15\,\text{cm}$, and $30\,\text{cm}$, recording the results in Table 3.
 	\end{enumerate}
 	
-	\section*{4. EXPERIMENTAL RESULTS}
+	\section*{4. Experimental results}
 	
 	\subsection*{4.1. Investigation of the magnetic field at the positions along the axis of solenoid}
 	
@@ -1210,7 +1265,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 		\textbf{{\Large IN RLC CIRCUIT}}
 	\end{center}
 	
-	\section*{1. DEVICES AND PURPOSE OF THE EXPERIMENT}
+	\section*{1.  Devices and Purpose of the experiment}
 	\begin{center}
 		\includegraphics[width=0.9\textwidth]{Devices3}
 	\end{center}
@@ -1221,7 +1276,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 	investigate the current and subsequently its frequency as well as the dissipated energy in the 
 	RLC circuit.
 	
-	\section*{2.THEORETICAL BACKGROUND}
+	\section*{2. Theoretical background}
 	
 	\subsection*{2.1. Inductor and RL circuit}
 	An inductor is a 2-terminal circuit element that stores energy in its magnetic field. If a current $i(t)$ is flowing through an inductor, the voltage $V_L$ across the inductor is proportional to the time rate of change of $i$:
@@ -1293,7 +1348,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 		\captionof{figure}{\textit{Energy in RLC circuit also exponential decays}}
 	\end{minipage}
 	
-	\section*{3. EXPERIMENTAL PROCEDURE}
+	\section*{3. Experimental procedure}
 	
 	\subsection*{3.1. Current, resistance and inductance in RL circuit}
 	\subsubsection*{3.1.1. Preparation for measurement}
@@ -1313,13 +1368,13 @@ This document presents five laboratory experiments in electricity, magnetism and
 	\end{enumerate}
 	
 	\subsection*{3.2. Current and energy in RLC circuit}
-	\subsubsection*{3.2.1 Preparation for measurement}
+	\subsubsection*{3.2.1. Preparation for measurement}
 	\begin{itemize}[leftmargin=1.5em]
 		\item Connect a $10\,\mu\text{F}$ capacitor in series with the coil. Connect Voltage Sensor across capacitor terminals.
 		\item Keep the measurement regime established in Section 2.1.1.
 	\end{itemize}
 	
-	\subsubsection*{3.2.2 Measurement sequence}
+	\subsubsection*{3.2.2. Measurement sequence}
 	\begin{enumerate}[leftmargin=1.5em]
 		\item Click "Start" to record data.
 		\item Calculate magnetic energy $U_B = \frac{1}{2} L i^2$ using "pow(x,2)" function with calculated $L$ (without core).
@@ -1329,7 +1384,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 		\item Save all data to storage.
 	\end{enumerate}
 	
-	\section*{4. EXPERIMENTAL RESULTS}
+	\section*{4. Experimental results}
 	\subsection*{4.1. Resistance and Inductance of the Coil}
 	\hspace{1.23em}
 	Initial current $\text{ I}_0 = 0.13 \text{ A}$
@@ -1477,14 +1532,14 @@ This document presents five laboratory experiments in electricity, magnetism and
 		\textbf{{\Large ELECTROMAGNETIC INDUCTION}}
 	\end{center}
 	
-	\section*{1. DEVICES AND PURPOSE OF THE EXPERIMENT}
+	\section*{1.  Devices and Purpose of the experiment}
 	\begin{center}
 		\includegraphics[width=0.8\textwidth]{Devices4}
 	\end{center}
 	\noindent
 	The experiment is to measure the voltage across a coil of wire when a bar magnet moves through it according to Faraday’s law.
 	
-	\section*{2. THEORETICAL BACKGROUND}
+	\section*{2. Theoretical background}
 	\qquad Michael Faraday was the first scientist to find that electricity can be produced from magnetism. He discovered that when a magnet is moving relative to a coil consisting of a number of turns of conductive wire, there will be a voltage across the coil of wire as a result. The essence of his discovery is described in the following statement
 	
 	\textit{\textbf{A voltage is induced in a circuit whenever relative motion exists between a conductor and a magnetic field, and the magnitude of this voltage is proportional to the rate of change of the flux}}.
@@ -1495,7 +1550,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 	
 	Because electricity is induced by a changing magnetic field, this process is called electromagnetic induction. Faraday also realized several factors that determine how much voltage is induced: the strength of the magnetic field, how fast the magnetic field changes, and the number of turns (loops) of wire in the coil.
 	
-	\section*{3. EXPERIMENTAL PROCEDURE}
+	\section*{3. Experimental procedure}
 	
 	\subsection*{3.1. Preparation of measurement}
 	\begin{itemize}[leftmargin=1.5em]
@@ -1506,7 +1561,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 		\item Prepare two data tables for the 1200-turn and 150-turn coils. Each table has 3 columns: \textit{"Magnet's pole"}, \textit{"Voltage peak 1 (mV)"}, and \textit{"Voltage peak 2 (mV)"}.
 	\end{itemize}
 	
-	\subsection*{3.2. Measurement consequences}
+	\subsection*{3.2. Measurement sequence}
 	\subsubsection*{3.2.1. 1200-turn coil}
 	\begin{enumerate}[leftmargin=1.5em]
 		\item Hold the bar magnet above the 1200-turn coil with the 'North - N' end at the bottom.
@@ -1521,7 +1576,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 	\subsubsection*{3.2.2. 150-turn coil}
 	Repeat the measurement procedure similarly for the 150-turn coil using single and double bar magnets, and record results in the second data table.
 	
-	\section*{4. EXPERIMENTAL RESULTS}
+	\section*{4. Experimental results}
 	
 	\subsection*{4.1. 1200-turn coil}
 	\subsubsection*{4.1.1. Graph}
@@ -1599,7 +1654,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 		\end{tabular}
 	\end{table}
 	
-	\section*{5. COMMENTS AND EXPLANATIONS}
+	\section*{5. Comments and explanations}
 	
 	\begin{bt}
 		\textbf{Why is the value of the first voltage peak smaller than that of the second voltage peak?}
@@ -1662,7 +1717,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 		\textbf{{\Large ELECTROMAGNETIC WAVE (MICROWAVE)}}
 	\end{center}
 	
-	\section*{1. DEVICES AND PURPOSE OF THE EXPERIMENT}
+	\section*{1.  Devices and Purpose of the experiment}
 	\begin{center}
 		\includegraphics[width=0.5\textwidth]{Devices51}
 		\captionof{figure}{\textit{ Control unit, (1) receiver terminal, (2) amplifier output, (3) amplifier output (ground); (4) transmitter terminal, (5) modulator switch, (6) speaker switch, (7) amplifier gain (amplification), (8) mains switch}}
@@ -1674,7 +1729,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 	
 	
 	
-	\section*{2. THEORETICAL BACKGROUND}
+	\section*{2. Theoretical background}
 	Microwaves are radio waves belonging to the electromagnetic (EM) spectrum whose wavelengths are conveniently measured in a few centimeters, corresponding to frequencies ranging from roughly $1.0\text{ GHz}$ to $30\text{ GHz}$. The small wavelength of microwaves allows conveniently sized antennas to direct them in narrow beams, which can be pointed directly at the receiving antenna.
 	
 	\vspace{0.3cm}
@@ -1689,7 +1744,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 	\noindent
 	The components and equipment included allow various experiments to be performed. A narrow beam of electromagnetic waves with a wavelength in the centimeter range (microwaves) in the form of a square-modulated signal is generated by the control unit, output by a transmitter, and picked up using accessories such as a horn antenna or a sensor probe. The modulation of the received signal can be rendered audible by means of an internal speaker, and the intensity of the signal can also be controlled.
 	
-	\section*{3. EXPERIMENTAL PROCEDURE}
+	\section*{3. Experimental procedure}
 	\subsection*{3.1. Straight-line propagation of microwaves}
 	\begin{center}
 		\includegraphics[width=0.5\textwidth]{Fig1}
@@ -1711,7 +1766,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 		\item Set the amplification to a medium level. Observe and draw a conclusion on the reception of the signal.
 	\end{enumerate}
 	
-	\subsection*{2.3. Screening and absorption of microwaves}
+	\subsection*{3.3. Screening and absorption of microwaves}
 	\begin{center}
 		\includegraphics[width=0.5\textwidth]{Fig3}
 		\captionof{figure}{\textit{Experimental setup for screening and absorption of microwaves}}
@@ -1735,7 +1790,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 		\item Repeat the procedure with other angles of the reflector, namely $40^\circ$, $50^\circ$, and $60^\circ$.
 	\end{enumerate}
 	
-	\subsection*{2.5. Refraction of microwaves}
+	\subsection*{3.5. Refraction of microwaves}
 	\begin{center}
 		\includegraphics[width=0.5\textwidth]{Fig5}
 		\captionof{figure}{\textit{Experimental setup for refraction of microwaves}}
@@ -1791,7 +1846,7 @@ This document presents five laboratory experiments in electricity, magnetism and
 		\item Repeat Step 2 two more times and record the measurement results in a data table with 4 columns: Trial, $x_1$, $x_2$, and $d$, respectively.
 	\end{enumerate}
 	
-	\section*{4. EXPERIMENTAL RESULTS}
+	\section*{4. Experimental results}
 	
 	\subsection*{4.1. Investigation of straight-line propagation of microwaves}
 	\noindent

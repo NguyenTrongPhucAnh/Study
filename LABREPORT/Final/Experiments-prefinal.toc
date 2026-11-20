@@ -1,26 +1,95 @@
-\contentsline {section}{\numberline {Experiment 1:}Measurement of Resistance, Capacitance, Inductance and Resonant Frequencies of RLC Circuit Using Oscilloscope}{7}{section*.3}%
-\contentsline {subsection}{1. DEVICES AND PURPOSE OF THE EXPERIMENT}{7}{section*.4}%
-\contentsline {subsection}{2. THEORETICAL BACKGROUND}{7}{section*.6}%
-\contentsline {subsection}{3. EXPERIMENTAL PROCEDURE}{10}{section*.13}%
-\contentsline {subsection}{4. EXPERIMENTAL RESULTS}{13}{section*.24}%
-\contentsline {section}{\numberline {Experiment 2:}Measurement of Magnetic Field inside a Solenoid with Finite Length}{19}{section*.36}%
-\contentsline {subsection}{1. DEVICES AND PURPOSE OF THE EXPERIMENT}{19}{section*.37}%
-\contentsline {subsection}{2. THEORETICAL BACKGROUND}{19}{section*.39}%
-\contentsline {subsection}{3. EXPERIMENTAL PROCEDURE}{20}{section*.41}%
-\contentsline {subsection}{4. EXPERIMENTAL RESULTS}{21}{section*.48}%
-\contentsline {section}{\numberline {Experiment 3:}Inductor and Free Oscillations in RLC Circuit}{25}{section*.58}%
-\contentsline {subsection}{1. DEVICES AND PURPOSE OF THE EXPERIMENT}{25}{section*.59}%
-\contentsline {subsection}{2.THEORETICAL BACKGROUND}{25}{section*.61}%
-\contentsline {subsection}{3. EXPERIMENTAL PROCEDURE}{27}{section*.66}%
-\contentsline {subsection}{4. EXPERIMENTAL RESULTS}{28}{section*.74}%
-\contentsline {section}{\numberline {Experiment 4:}Verification of Faraday's Law of Electromagnetic Induction}{31}{section*.80}%
-\contentsline {subsection}{1. DEVICES AND PURPOSE OF THE EXPERIMENT}{31}{section*.81}%
-\contentsline {subsection}{2. THEORETICAL BACKGROUND}{31}{section*.83}%
-\contentsline {subsection}{3. EXPERIMENTAL PROCEDURE}{31}{section*.85}%
-\contentsline {subsection}{4. EXPERIMENTAL RESULTS}{32}{section*.91}%
-\contentsline {subsection}{5. COMMENTS AND EXPLANATIONS}{37}{section*.101}%
-\contentsline {section}{\numberline {Experiment 5:}Investigation of Transmission of Electromagnetic Wave (Microwave)}{39}{section*.103}%
-\contentsline {subsection}{1. DEVICES AND PURPOSE OF THE EXPERIMENT}{39}{section*.104}%
-\contentsline {subsection}{2. THEORETICAL BACKGROUND}{39}{section*.106}%
-\contentsline {subsection}{3. EXPERIMENTAL PROCEDURE}{40}{section*.108}%
-\contentsline {subsection}{4. EXPERIMENTAL RESULTS}{45}{section*.119}%
+\contentsline {section}{\numberline {Experiment 1:}Measurement of Resistance, Capacitance, Inductance and Resonant Frequencies of RLC Circuit Using Oscilloscope}{9}{section*.3}%
+\contentsline {subsection}{1. Devices and Purpose of the experiment}{9}{section*.4}%
+\contentsline {subsection}{2. Theoretical background}{9}{section*.6}%
+\contentsline {subsubsection}{2.1. RLC Circuit}{9}{section*.8}%
+\contentsline {subsubsection}{2.2. Oscilloscope}{10}{section*.10}%
+\contentsline {paragraph}{2.2.1. General description}{10}{section*.12}%
+\contentsline {paragraph}{2.2.2. Resultant signal form produced by two perpendicular oscillations}{11}{section*.14}%
+\contentsline {subsubsection}{2.3. Function Generator and Component Determination}{12}{section*.16}%
+\contentsline {subsection}{3. Experimental procedure}{12}{section*.18}%
+\contentsline {subsubsection}{3.1. Measurement of Resistance, Capacitance, and Inductance}{13}{section*.20}%
+\contentsline {paragraph}{3.1.1. Measurement of unknown resistance ($R_X$)}{13}{section*.22}%
+\contentsline {paragraph}{3.1.2. Measurement of unknown capacitance ($C_X$)}{13}{section*.24}%
+\contentsline {paragraph}{3.1.3. Measurement of unknown inductance ($L_X$)}{13}{section*.26}%
+\contentsline {subsubsection}{3.2. Measurement of Resonant Frequency of RLC Circuit}{14}{section*.28}%
+\contentsline {paragraph}{3.2.1. Parallel RLC circuit}{14}{section*.30}%
+\contentsline {paragraph}{3.2.2. Series RLC circuit}{14}{section*.33}%
+\contentsline {subsection}{4. Experimental results}{15}{section*.36}%
+\contentsline {subsubsection}{4.1. Measurement of resistance, capacitance, and inductance}{15}{section*.38}%
+\contentsline {paragraph}{4.1.1. Data Tables}{15}{section*.40}%
+\contentsline {paragraph}{4.1.2. Data processing}{16}{section*.45}%
+\contentsline {subsubsection}{4.2. Resonant Frequencies of Parallel and Series RLC Circuits}{17}{section*.47}%
+\contentsline {paragraph}{4.2.1. Data table}{17}{section*.49}%
+\contentsline {paragraph}{4.2.2. Data processing}{17}{section*.52}%
+\contentsline {section}{\numberline {Experiment 2:}Measurement of Magnetic Field inside a Solenoid with Finite Length}{21}{section*.54}%
+\contentsline {subsection}{1. Devices and Purpose of the experiment}{21}{section*.55}%
+\contentsline {subsection}{2. Theoretical background}{21}{section*.57}%
+\contentsline {subsection}{3. Experimental procedure}{22}{section*.59}%
+\contentsline {subsubsection}{3.1. Preparation of Measurement}{23}{section*.61}%
+\contentsline {subsubsection}{3.2. Measurement Sequence}{23}{section*.63}%
+\contentsline {paragraph}{3.2.1. Investigation of magnetic field along the axis - $B(x)$}{23}{section*.65}%
+\contentsline {paragraph}{3.2.2. Relationship between magnetic field and current - $B(I)$}{23}{section*.67}%
+\contentsline {paragraph}{3.2.3. Comparison of experimental and theoretical magnetic field}{23}{section*.69}%
+\contentsline {subsection}{4. Experimental results}{23}{section*.71}%
+\contentsline {subsubsection}{4.1. Investigation of the magnetic field at the positions along the axis of solenoid}{24}{section*.73}%
+\contentsline {subsubsection}{4.2. Measurement of the relationship between the magnetic field and the current through the solenoid}{25}{section*.77}%
+\contentsline {subsubsection}{4.3. Comparison of experimental and theoretical magnetic field }{25}{section*.81}%
+\contentsline {section}{\numberline {Experiment 3:}Inductor and Free Oscillations in RLC Circuit}{27}{section*.84}%
+\contentsline {subsection}{1. Devices and Purpose of the experiment}{27}{section*.85}%
+\contentsline {subsection}{2. Theoretical background}{27}{section*.87}%
+\contentsline {subsubsection}{2.1. Inductor and RL circuit}{27}{section*.89}%
+\contentsline {subsubsection}{2.2. Oscillation in RLC circuit}{28}{section*.91}%
+\contentsline {subsubsection}{2.3. Energy in RLC circuit}{29}{section*.93}%
+\contentsline {subsection}{3. Experimental procedure}{29}{section*.95}%
+\contentsline {subsubsection}{3.1. Current, resistance and inductance in RL circuit}{29}{section*.97}%
+\contentsline {paragraph}{3.1.1. Preparation for measurement}{29}{section*.99}%
+\contentsline {paragraph}{3.1.2. Measurement sequence}{29}{section*.101}%
+\contentsline {subsubsection}{3.2. Current and energy in RLC circuit}{30}{section*.103}%
+\contentsline {paragraph}{3.2.1. Preparation for measurement}{30}{section*.105}%
+\contentsline {paragraph}{3.2.2. Measurement sequence}{30}{section*.107}%
+\contentsline {subsection}{4. Experimental results}{30}{section*.109}%
+\contentsline {subsubsection}{4.1. Resistance and Inductance of the Coil}{30}{section*.111}%
+\contentsline {subsubsection}{4.2. Free Oscillations of the RLC circuit}{31}{section*.113}%
+\contentsline {paragraph}{1. Comment}{31}{section*.115}%
+\contentsline {paragraph}{2. Explanation}{32}{section*.117}%
+\contentsline {section}{\numberline {Experiment 4:}Verification of Faraday's Law of Electromagnetic Induction}{33}{section*.119}%
+\contentsline {subsection}{1. Devices and Purpose of the experiment}{33}{section*.120}%
+\contentsline {subsection}{2. Theoretical background}{33}{section*.122}%
+\contentsline {subsection}{3. Experimental procedure}{33}{section*.124}%
+\contentsline {subsubsection}{3.1. Preparation of measurement}{34}{section*.126}%
+\contentsline {subsubsection}{3.2. Measurement sequence}{34}{section*.128}%
+\contentsline {paragraph}{3.2.1. 1200-turn coil}{34}{section*.130}%
+\contentsline {paragraph}{3.2.2. 150-turn coil}{34}{section*.132}%
+\contentsline {subsection}{4. Experimental results}{34}{section*.134}%
+\contentsline {subsubsection}{4.1. 1200-turn coil}{35}{section*.136}%
+\contentsline {paragraph}{4.1.1. Graph}{35}{section*.138}%
+\contentsline {paragraph}{4.1.2. Data Table of Induced Voltage}{36}{section*.140}%
+\contentsline {subsubsection}{4.2. 150-turn coil}{37}{section*.143}%
+\contentsline {paragraph}{4.2.1. Graph}{37}{section*.145}%
+\contentsline {paragraph}{4.2.2. Data Table of Induced Voltage}{39}{section*.147}%
+\contentsline {subsection}{5. Comments and explanations}{39}{section*.150}%
+\contentsline {section}{\numberline {Experiment 5:}Investigation of Transmission of Electromagnetic Wave (Microwave)}{41}{section*.152}%
+\contentsline {subsection}{1. Devices and Purpose of the experiment}{41}{section*.153}%
+\contentsline {subsection}{2. Theoretical background}{41}{section*.155}%
+\contentsline {subsection}{3. Experimental procedure}{42}{section*.157}%
+\contentsline {subsubsection}{3.1. Straight-line propagation of microwaves}{42}{section*.159}%
+\contentsline {subsubsection}{3.2. Penetration of microwaves}{42}{section*.161}%
+\contentsline {subsubsection}{3.3. Screening and absorption of microwaves}{43}{section*.163}%
+\contentsline {subsubsection}{3.4. Reflection of microwaves}{43}{section*.165}%
+\contentsline {subsubsection}{3.5. Refraction of microwaves}{44}{section*.167}%
+\contentsline {subsubsection}{3.6. Diffraction of microwaves}{44}{section*.169}%
+\contentsline {subsubsection}{3.7. Interference of microwaves}{45}{section*.171}%
+\contentsline {subsubsection}{3.8. Polarization of microwaves}{46}{section*.173}%
+\contentsline {subsubsection}{3.9. Wavelength of standing waves}{46}{section*.175}%
+\contentsline {subsection}{4. Experimental results}{47}{section*.177}%
+\contentsline {subsubsection}{4.1. Investigation of straight-line propagation of microwaves}{47}{section*.179}%
+\contentsline {subsubsection}{4.2. Investigation of penetration of microwaves}{47}{section*.181}%
+\contentsline {subsubsection}{4.3. Investigation of screening and absorption of microwaves}{47}{section*.183}%
+\contentsline {subsubsection}{4.4. Investigation of reflection of microwaves}{47}{section*.185}%
+\contentsline {subsubsection}{4.5. Investigation of refraction of microwaves}{48}{section*.188}%
+\contentsline {subsubsection}{4.6. Investigation of diffraction of microwaves}{48}{section*.190}%
+\contentsline {subsubsection}{4.7. Investigation of interference of microwaves}{48}{section*.192}%
+\contentsline {subsubsection}{4.8. Investigation of polarization of microwaves}{48}{section*.194}%
+\contentsline {subsubsection}{4.9. Wavelength and Frequency of Microwaves}{48}{section*.196}%
+\contentsline {paragraph}{4.9.1. Data Table}{48}{section*.198}%
+\contentsline {paragraph}{4.9.2. Data Processing}{49}{section*.201}%
